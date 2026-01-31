@@ -1,0 +1,111 @@
+:root {
+  --bg: #0b1021;
+  --card: #11182f;
+  --accent: #5dd5ff;
+  --text: #e9edf5;
+  --muted: #9aaccc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "SF Pro Display", "Inter", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(93, 213, 255, 0.1), transparent 25%),
+    radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.07), transparent 25%),
+    var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.shell {
+  width: min(1100px, 100%);
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+header {
+  margin-bottom: 18px;
+}
+
+h1 { margin: 0 0 8px; letter-spacing: 0.5px; }
+
+p { margin: 0; color: var(--muted); }
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label { font-size: 14px; color: var(--muted); }
+
+input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+button {
+  flex: 1;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #5dd5ff, #4a9df8);
+  color: #07101f;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+button:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(74, 157, 248, 0.3); }
+button:active { transform: translateY(0); }
+
+.panel {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 16px;
+  min-height: 120px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.card h3 { margin: 0 0 6px; }
+.small { color: var(--muted); font-size: 13px; }
+.badge { background: rgba(93, 213, 255, 0.15); color: var(--accent); padding: 2px 6px; border-radius: 6px; font-size: 12px; }
+
+#result pre { white-space: pre-wrap; }

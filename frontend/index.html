@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Coach RAG</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header>
+      <h1>NBA Coach RAG</h1>
+      <p>Pull recent team games and suggest a rotation for the upcoming opponent.</p>
+    </header>
+
+    <section class="controls">
+      <div class="field">
+        <label>Team Abbr (e.g., BOS)</label>
+        <input id="team" value="BOS" />
+      </div>
+      <div class="field">
+        <label>Season (YYYY-YY)</label>
+        <input id="season" value="2024-25" />
+      </div>
+      <div class="field">
+        <label>Recent games per player</label>
+        <input id="last" type="number" value="10" />
+      </div>
+      <div class="field">
+        <label>Opponent Abbr</label>
+        <input id="opponent" value="LAL" />
+      </div>
+      <div class="actions">
+        <button id="ingest">Ingest Data</button>
+        <button id="recommend">Build Rotation</button>
+      </div>
+    </section>
+
+    <section id="result" class="panel"></section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
