@@ -51,7 +51,7 @@ recommendBtn.onclick = async () => {
 };
 
 function renderResult(data) {
-  const { suggested_lineup = [], supporting_games = [] } = data;
+  const { suggested_lineup = [] } = data;
   const lineupCards = suggested_lineup
     .map(
       (p) => `
@@ -64,22 +64,8 @@ function renderResult(data) {
     )
     .join('');
 
-  const snippetCards = supporting_games
-    .map(
-      (g) => `
-      <div class="card">
-        <h4>${g.player}</h4>
-        <div class="small">${g.game_date} vs ${g.opponent}</div>
-        <div class="small">${g.minutes} MIN, ${g.pts} PTS</div>
-      </div>
-    `,
-    )
-    .join('');
-
   resultEl.innerHTML = `
     <h2>Suggested Rotation</h2>
     <div class="result-grid">${lineupCards || '<div class="small">No data</div>'}</div>
-    <h2>Supporting Samples</h2>
-    <div class="result-grid">${snippetCards || '<div class="small">No data</div>'}</div>
   `;
 }
